@@ -1,33 +1,37 @@
 import java.util.Scanner;
 
 public class ContaTerminal {
-    public static void main(String[] args) throws Exception{
-        Scanner contaTerminal = new Scanner(System.in);
 
-        
-        int numero;
-        String agencia, nomeCliente;
-        double saldo;
+	public static void main(String[] args) {
 
-        
-        System.out.print("Por favor, digite o número da agência: ");
-        agencia = contaTerminal.nextLine();
+		Scanner sc = new Scanner(System.in);
+		int numero;
+		String agencia;
+		String nomeCliente;
+		double saldo;
 
-        System.out.print("Agora, digite o número da conta: ");
-        numero = contaTerminal.nextInt();
-        contaTerminal.nextLine(); 
+		System.out.println("---------------CONTA BANCÁRIA---------------");
+		System.out.println();
+		System.out.println("Por favor, digite o número da Conta: ");
+		numero = sc.nextInt();
 
-        System.out.print("Digite o nome do cliente: ");
-        nomeCliente = contaTerminal.nextLine();
+		System.out.println("Agora digite o número da Agência: ");
+		agencia = sc.next();
 
-        System.out.print("Por fim, digite o saldo da conta: ");
-        saldo = contaTerminal.nextDouble();
+		System.out.println("Me informe seu nome: ");
+		nomeCliente = sc.next();
+		sc.nextLine();
 
-        
-      System.out.println("Olá " + contaTerminal.nomeCliente  + ", obrigado por criar uma conta em nosso banco. Sua agência é" + contaTerminal.agencia + ", conta " + contaTerminal.numero + " e seu saldo" + contaTerminal.saldo + "já está disponível para saque.");
+		System.out.println("Agora me informa seu saldo atual: ");
+		saldo = sc.nextDouble();
 
-        
-        contaTerminal.close();
-    }
+		System.out.println();
+		System.out.printf("Olá %s, obrigado por criar uma conta em "
+				+ "nosso banco, sua agência é %s, "
+				+ "conta %d e seu saldo %.2f já está disponível"
+				+ " para saque.", nomeCliente, agencia, numero, saldo);
+
+		sc.close();
+	}
+
 }
-
